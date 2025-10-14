@@ -4,7 +4,7 @@ function CourseInfo() {
   return (
     <section
       id="course-info"
-      className="flex justify-center items-center w-full h-screen"
+      className="flex justify-center items-center w-full"
     >
       <div className="px-9 py-5 bg-white shadow-[0_0_30px_rgba(0,0,0,0.1)] rounded flex flex-col justify-center items-center w-full mx-10">
         <CourseInfoItem />
