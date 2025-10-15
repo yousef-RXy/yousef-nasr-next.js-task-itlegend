@@ -1,7 +1,7 @@
 import { CourseHeaderProps } from '@/types/course';
 import { IoAdd, IoRemove } from 'react-icons/io5';
 
-export const CourseHeader: React.FC<CourseHeaderProps> = ({
+export const CourseModuleHeader: React.FC<CourseHeaderProps> = ({
   week,
   title,
   subtitle,

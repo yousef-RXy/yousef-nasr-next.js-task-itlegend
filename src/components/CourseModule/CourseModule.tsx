@@ -3,8 +3,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { CourseModuleProps } from '@/types/course';
-import { CourseHeader } from './CourseHeader';
 import { CourseItem } from './CourseItem';
+import { CourseModuleHeader } from './CourseModuleHeader';
 
 export const CourseModule: React.FC<CourseModuleProps> = ({
   week,
@@ -21,7 +21,7 @@ export const CourseModule: React.FC<CourseModuleProps> = ({
   return (
     <div className="w-full max-w-sm mx-auto my-8">
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-        <CourseHeader
+        <CourseModuleHeader
           week={week}
           title={title}
           subtitle={subtitle}
