@@ -122,12 +122,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           screen.orientation
         ) {
           try {
-            const orientation = screen.orientation as ScreenOrientation & {
-              lock?: (orientation: OrientationLockType) => Promise<void>;
-            };
-
-            if (orientation.lock) {
-              await orientation.lock('landscape' as OrientationLockType);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const orientation = screen.orientation as any;
+            if (typeof orientation.lock === 'function') {
+              await orientation.lock('landscape');
             }
           } catch (err) {
             console.warn('Orientation lock not supported or blocked:', err);
