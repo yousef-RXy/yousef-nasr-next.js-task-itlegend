@@ -119,11 +119,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         if (
           typeof window !== 'undefined' &&
           'orientation' in screen &&
-          screen.orientation &&
-          screen.orientation.lock
+          screen.orientation
         ) {
           try {
-            await screen.orientation.lock('landscape');
+            const orientation = screen.orientation as any;
+            if (typeof orientation.lock === 'function') {
+              await orientation.lock('landscape');
+            }
           } catch (err) {
             console.warn('Orientation lock not supported or blocked:', err);
           }
