@@ -13,8 +13,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body>
-        <main className="min-h-screen flex items-center flex-col w-full p-4 lg:p-10">
+      <body className="flex justify-center items-center">
+        <main className="min-h-screen flex items-center flex-col max-w-sm md:max-w-3xl lg:max-w-full lg:w-full p-4 lg:px-10">
           {children}
         </main>
       </body>

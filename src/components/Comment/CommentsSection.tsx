@@ -1,14 +1,31 @@
 'use client';
 
-import { CommentsSectionProps } from '@/types/comment';
+import { Comment } from '@/types/comment';
 import { CommentCard } from './CommentCard';
 import { CommentInput } from './CommentInput';
 import { useState } from 'react';
 
-export const CommentsSection: React.FC<CommentsSectionProps> = ({
-  comments: initialComments,
-}) => {
-  const [comments, setComments] = useState(initialComments);
+export const CommentsSection: React.FC = () => {
+  const sampleComments: Comment[] = [
+    {
+      id: '1',
+      author: 'Student Name Goes Here',
+      avatar: 'https://i.pravatar.cc/150?img=1',
+      date: 'Oct 19, 2021',
+      content:
+        'Lorem ipsum dolor sit ormet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    {
+      id: '2',
+      author: 'Student Name Goes Here',
+      avatar: 'https://i.pravatar.cc/150?img=2',
+      date: 'Oct 19, 2021',
+      content:
+        'Lorem ipsum dolor sit ormet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+  ];
+
+  const [comments, setComments] = useState(sampleComments);
 
   const handleAddComment = (content: string) => {
     console.log('Submitting comment:', content);
@@ -25,12 +42,8 @@ export const CommentsSection: React.FC<CommentsSectionProps> = ({
   };
 
   return (
-    <div className="max-w-md mx-auto my-8">
+    <div className="mx-auto">
       <div className=" overflow-hidden">
-        <div className="p-4 ">
-          <h3 className="text-lg font-semibold text-gray-900">Comments</h3>
-        </div>
-
         <div className="divide-y divide-gray-100">
           {comments.map(comment => (
             <CommentCard key={comment.id} comment={comment} />

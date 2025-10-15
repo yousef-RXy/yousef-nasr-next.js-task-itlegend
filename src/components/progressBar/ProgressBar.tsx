@@ -9,10 +9,9 @@ interface ProgressBarProps {
 
 export default function ProgressBar({ percentage, label }: ProgressBarProps) {
   const pct = Math.min(100, Math.max(0, percentage));
-  console.log('Rendering ProgressBar with percentage:', pct);
 
   return (
-    <div className="w-full max-w-xl mx-auto mb-8 relative">
+    <div className="w-full px-2 mx-auto my-8 relative">
       {label && (
         <p className="mb-2 text-sm font-medium text-gray-300">{label}</p>
       )}
@@ -20,7 +19,7 @@ export default function ProgressBar({ percentage, label }: ProgressBarProps) {
       <div className="relative w-full h-2 bg-gray-200 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
-          whileInView={{ width: `${percentage}%` }}
+          whileInView={{ width: `${pct}%` }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
           className="h-full bg-green-500 rounded-full"
@@ -29,11 +28,11 @@ export default function ProgressBar({ percentage, label }: ProgressBarProps) {
 
       <motion.div
         initial={{ left: '0%', opacity: 0 }}
-        whileInView={{ left: `${pct - 10}%`, opacity: 1 }}
+        whileInView={{ left: `${pct - 1}%`, opacity: 1 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
-        style={{ translate: '0 -0%' }}
-        className="absolute top-[-1px] left-0 flex flex-col items-center"
+        style={{ translate: '-50% 0' }}
+        className="absolute top-[-30px] left-0 flex flex-col items-center"
       >
         <div className="relative flex flex-col items-center">
           <div className="bg-white border-2 border-gray-300 text-gray-800 text-[8px] font-semibold rounded-full w-5 h-5 flex items-center justify-center shadow">

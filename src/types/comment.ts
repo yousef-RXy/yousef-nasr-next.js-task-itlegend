@@ -5,7 +5,3 @@ export interface Comment {
   date: string;
   content: string;
 }
-
-export interface CommentsSectionProps {
-  comments: Comment[];
-}

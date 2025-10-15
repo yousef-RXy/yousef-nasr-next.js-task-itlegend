@@ -1,44 +1,66 @@
+'use client';
+
+import { useState } from 'react';
 import { CommentsSection } from '@/components/Comment/CommentsSection';
 import CourseInfo from '@/components/sections/CourseInfo';
-import { Comment } from '@/types/comment';
 import VideoPlayer from '@/components/video/VideoPlayer';
 import Header from '@/components/sections/Header';
+import ProgressBar from '@/components/progressBar/ProgressBar';
+import CourseModules from '@/components/sections/CourseModules';
+import Title from '@/components/ui/Title';
 
 export default function Home() {
-  const sampleComments: Comment[] = [
-    {
-      id: '1',
-      author: 'Student Name Goes Here',
-      avatar: 'https://i.pravatar.cc/150?img=1',
-      date: 'Oct 19, 2021',
-      content:
-        'Lorem ipsum dolor sit ormet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    {
-      id: '2',
-      author: 'Student Name Goes Here',
-      avatar: 'https://i.pravatar.cc/150?img=2',
-      date: 'Oct 19, 2021',
-      content:
-        'Lorem ipsum dolor sit ormet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-  ];
-
-  const videoUrl =
-    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+  const [isTheaterMode, setIsTheaterMode] = useState(false);
 
   return (
-    <>
-      <Header />
-      <VideoPlayer videoUrl={videoUrl} />;{/* <CourseInfo /> */}
-      {/* <section className="min-h-screen flex flex-col justify-center items-center text-white p-10">
-        <h2 className="text-3xl font-bold mb-10">My Skills</h2>
-        <ProgressBar label="React" percentage={90} />
-        <ProgressBar label="Next.js" percentage={80} />
-        <ProgressBar label="Node.js" percentage={70} />
-        <ProgressBar label="Tailwind CSS" percentage={85} />
-      </section> */}
-      {/* <CommentsSection comments={sampleComments} /> */}
-    </>
+    <div className="w-full grid lg:gap-8 lg:gap-x-20 lg:grid-cols-[55%_auto] lg:grid-rows-[auto_auto_auto_auto_1fr]">
+      <div className="w-full lg:col-span-2">
+        <Header />
+      </div>
+
+      <div
+        className={`w-full lg:relative lg:top-0 sticky top-1 z-50  lg:row-start-2 ${
+          isTheaterMode ? 'lg:col-span-2' : 'lg:col-start-1 lg:row-span-2'
+        }`}
+      >
+        <VideoPlayer
+          isTheaterMode={isTheaterMode}
+          onTheaterToggle={() => setIsTheaterMode(v => !v)}
+        />
+      </div>
+
+      <div
+        className={`w-full lg:col-start-1  ${
+          isTheaterMode ? 'lg:row-start-3 lg:row-span-2' : 'lg:row-start-4'
+        }`}
+      >
+        <Title title="Course Materials" />
+        <CourseInfo />
+      </div>
+
+      <div
+        className={`w-full lg:col-start-2  ${
+          isTheaterMode ? 'lg:row-start-3' : 'lg:row-start-2'
+        }`}
+      >
+        <Title title="Topics for This Course" />
+        <ProgressBar percentage={63} />
+      </div>
+
+      <div
+        className={`w-full lg:col-start-2  ${
+          isTheaterMode
+            ? 'lg:row-start-4 lg:row-span-2'
+            : 'lg:row-start-3 lg:row-span-3'
+        }`}
+      >
+        <CourseModules />
+      </div>
+
+      <div className="w-full lg:col-start-1 lg:row-start-5">
+        <Title title="Comments" />
+        <CommentsSection />
+      </div>
+    </div>
   );
 }

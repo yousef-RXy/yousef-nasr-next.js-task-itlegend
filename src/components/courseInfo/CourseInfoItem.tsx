@@ -1,13 +1,19 @@
-import { FaChalkboardTeacher } from 'react-icons/fa';
+import { CourseInfoItemProps } from '@/types/courseInfo';
 
-export default function CourseInfoItem() {
+const CourseInfoItem: React.FC<CourseInfoItemProps> = function ({
+  icon,
+  title,
+  value,
+}) {
   return (
     <div className="py-5 flex justify-between items-center w-full">
       <div className="flex items-center gap-2">
-        <FaChalkboardTeacher />
-        <span className="text-sm font-medium text-gray-700">Language:</span>
+        {icon}
+        <span className="text-lg font-medium text-gray-700">{title}:</span>
       </div>
-      <span className="text-sm font-medium text-gray-700">John Doe</span>
+      <span className="text-lg font-medium text-gray-700">{value}</span>
     </div>
   );
-}
+};
+
+export default CourseInfoItem;

@@ -5,12 +5,18 @@ import {
   IoVolumeHigh,
   IoVolumeMute,
   IoExpand,
+  IoContract,
 } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
 import { VideoControlsProps } from '@/types/video';
 
-const VideoControls: React.FC<VideoControlsProps> = ({
+interface ExtendedVideoControlsProps extends VideoControlsProps {
+  isTheaterMode?: boolean;
+  onTheaterToggle?: () => void;
+}
+
+const VideoControls: React.FC<ExtendedVideoControlsProps> = ({
   isPlaying,
   isMuted,
   currentTime,
@@ -19,6 +25,8 @@ const VideoControls: React.FC<VideoControlsProps> = ({
   onMuteToggle,
   onSeek,
   onFullscreen,
+  isTheaterMode,
+  onTheaterToggle,
 }) => {
   const formatTime = (time: number): string => {
     const minutes = Math.floor(time / 60);
@@ -129,16 +137,69 @@ const VideoControls: React.FC<VideoControlsProps> = ({
           </motion.span>
         </div>
 
-        <motion.button
-          onClick={onFullscreen}
-          className="text-white hover:text-blue-400 transition-colors"
-          aria-label="Fullscreen"
-          whileHover={{ scale: 1.1, rotate: 90 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.2 }}
-        >
-          <IoExpand className="w-6 h-6" />
-        </motion.button>
+        <div className="flex items-center gap-3">
+          {/* Theater Mode Button - Hidden on mobile, visible on lg+ */}
+          {onTheaterToggle && (
+            <motion.button
+              onClick={onTheaterToggle}
+              className="hidden lg:block text-white hover:text-blue-400 transition-colors"
+              aria-label={isTheaterMode ? 'Exit Theater Mode' : 'Theater Mode'}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+            >
+              <AnimatePresence mode="wait">
+                {isTheaterMode ? (
+                  <motion.div
+                    key="contract"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <IoContract className="w-6 h-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="expand-theater"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect
+                        x="2"
+                        y="6"
+                        width="20"
+                        height="12"
+                        rx="2"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          )}
+
+          {/* Fullscreen Button */}
+          <motion.button
+            onClick={onFullscreen}
+            className="text-white hover:text-blue-400 transition-colors"
+            aria-label="Fullscreen"
+            whileHover={{ scale: 1.1, rotate: 90 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.2 }}
+          >
+            <IoExpand className="w-6 h-6" />
+          </motion.button>
+        </div>
       </div>
     </motion.div>
   );

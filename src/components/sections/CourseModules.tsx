@@ -38,7 +38,7 @@ export default function CourseModules() {
   ];
 
   return (
-    <section id="course-modules" className="space-y-4 p-4 w-sm">
+    <section id="course-modules" className="space-y-4 w-full">
       <CourseModule
         week="Week 1-4"
         title="Advanced story telling techniques for writers:"

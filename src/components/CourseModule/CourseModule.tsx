@@ -19,7 +19,7 @@ export const CourseModule: React.FC<CourseModuleProps> = ({
     setIsExpanded(oldState => !oldState);
   };
   return (
-    <div className="w-full max-w-sm mx-auto my-8">
+    <div className="w-full  my-8">
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <CourseModuleHeader
           week={week}
