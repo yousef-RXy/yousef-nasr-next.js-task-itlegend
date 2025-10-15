@@ -1,4 +1,4 @@
-import CourseInfoItem from '../ui/CourseInfoItem';
+import CourseInfoItem from '../courseInfo/CourseInfoItem';
 
 function CourseInfo() {
   return (
