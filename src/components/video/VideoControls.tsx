@@ -138,7 +138,6 @@ const VideoControls: React.FC<ExtendedVideoControlsProps> = ({
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Theater Mode Button - Hidden on mobile, visible on lg+ */}
           {onTheaterToggle && (
             <motion.button
               onClick={onTheaterToggle}
@@ -188,7 +187,6 @@ const VideoControls: React.FC<ExtendedVideoControlsProps> = ({
             </motion.button>
           )}
 
-          {/* Fullscreen Button */}
           <motion.button
             onClick={onFullscreen}
             className="text-white hover:text-blue-400 transition-colors"

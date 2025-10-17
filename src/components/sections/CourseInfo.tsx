@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseInfoItem from '../courseInfo/CourseInfoItem';
+import CourseInfoItem from '../CourseInfo/CourseInfoItem';
 import { CourseInfoItemProps } from '@/types/courseInfo';
 
 import { FaChalkboardTeacher, FaBookReader } from 'react-icons/fa';
