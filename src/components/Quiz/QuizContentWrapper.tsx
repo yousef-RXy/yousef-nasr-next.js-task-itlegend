@@ -11,7 +11,6 @@ const QuizContentWrapper: React.FC<QuizContentWrapperProps> = ({
   const { quizProgress, setQuizProgress, quizData, QUIZ_TIME_LIMIT } =
     useQuiz();
 
-  // Timer effect
   useEffect(() => {
     if (!isOpen || quizProgress.completed || quizProgress.timeRemaining <= 0)
       return;

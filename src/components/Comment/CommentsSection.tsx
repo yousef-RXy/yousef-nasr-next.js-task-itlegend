@@ -42,7 +42,7 @@ export const CommentsSection: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto">
+    <section id="comment" className="mx-auto">
       <div className=" overflow-hidden">
         <div className="divide-y divide-gray-100">
           {comments.map(comment => (
@@ -52,6 +52,6 @@ export const CommentsSection: React.FC = () => {
 
         <CommentInput onSubmit={handleAddComment} />
       </div>
-    </div>
+    </section>
   );
 };

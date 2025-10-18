@@ -8,13 +8,17 @@ import Header from '@/components/sections/Header';
 import ProgressBar from '@/components/progressBar/ProgressBar';
 import CourseModules from '@/components/sections/CourseModules';
 import Title from '@/components/ui/Title';
+import { Toaster } from 'sonner';
+import IconButtons from '@/components/ui/IconButtons';
 
 export default function Home() {
   const [isTheaterMode, setIsTheaterMode] = useState(false);
 
   return (
     <div className="w-full grid lg:gap-8 lg:gap-x-20 lg:grid-cols-[55%_auto] lg:grid-rows-[auto_auto_auto_auto_1fr]">
-      <div className="w-full lg:col-span-2">
+      <Toaster position="top-right" richColors />
+
+      <div className="w-full lg:col-span-2 lg:row-start-1">
         <Header />
       </div>
 
@@ -27,6 +31,13 @@ export default function Home() {
           isTheaterMode={isTheaterMode}
           onTheaterToggle={() => setIsTheaterMode(v => !v)}
         />
+        <div className="hidden lg:block">
+          <IconButtons />
+        </div>
+      </div>
+
+      <div className="lg:hidden">
+        <IconButtons />
       </div>
 
       <div
