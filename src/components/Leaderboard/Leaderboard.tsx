@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Popup from '@/components/ui/Popup';
 import LeaderboardContent from '@/components/Leaderboard/LeaderboardContent';
-import IconButton from '../ui/IconButton';
+import IconButton from '@/components/ui/IconButton';
 import { MdOutlineLeaderboard } from 'react-icons/md';
 
 export default function Leaderboard() {

@@ -1,5 +1,5 @@
 import { QuizProps } from '@/types/quiz';
-import Popup from '../ui/Popup';
+import Popup from '@/components/ui/Popup';
 import QuizContentWrapper from './QuizContentWrapper';
 import { QuizProvider } from './QuizContext';
 

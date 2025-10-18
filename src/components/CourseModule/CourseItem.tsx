@@ -4,7 +4,7 @@ import { Badge } from './Badge';
 import Quiz from '@/components/Quiz/Quiz';
 import { useState } from 'react';
 import { QuizQuestion } from '@/types/quiz';
-import Popup from '../ui/Popup';
+import Popup from '@/components/ui/Popup';
 
 export const CourseItem: React.FC<CourseItemProps> = ({
   title,
