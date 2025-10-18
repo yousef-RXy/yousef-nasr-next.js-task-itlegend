@@ -1,11 +1,11 @@
 import React from 'react';
-import CourseInfoItem from '@/components/CourseInfo/CourseInfoItem';
 import { CourseInfoItemProps } from '@/types/courseInfo';
 
 import { FaChalkboardTeacher, FaBookReader } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa6';
 import { RiBookShelfLine } from 'react-icons/ri';
 import { GrLanguage } from 'react-icons/gr';
+import CourseInfoItem from '../CourseInfo/CourseInfoItem';
 
 function CourseInfo() {
   const CourseInfoItems: CourseInfoItemProps[] = [
