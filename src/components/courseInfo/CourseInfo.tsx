@@ -22,7 +22,7 @@ const CourseInfoItem: React.FC<CourseInfoItemProps> = function ({
   );
 };
 
-function CourseInfo() {
+export function CourseInfo() {
   const CourseInfoItems: CourseInfoItemProps[] = [
     {
       icon: <FaChalkboardTeacher />,
@@ -68,5 +68,3 @@ function CourseInfo() {
     </section>
   );
 }
-
-export default CourseInfo;
