@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { CommentsSection } from '@/components/Comment/CommentsSection';
-import { CourseInfo } from '@/components/CourseInfo/CourseInfo';
+import { CourseInfo } from '@/components/sections/CourseInfo';
 import VideoPlayer from '@/components/video/VideoPlayer';
 import Header from '@/components/sections/Header';
 import ProgressBar from '@/components/progressBar/ProgressBar';
