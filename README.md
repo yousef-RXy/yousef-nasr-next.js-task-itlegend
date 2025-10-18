@@ -1,91 +1,126 @@
-Course Player Web Application
-A modern, interactive course learning platform built with Next.js 15, featuring video playback, quizzes, leaderboards, and real-time progress tracking.
-🚀 Live Demo
-Check out the live application: https://yousef-nasr-next-js-task-itlegend-k.vercel.app/
-📋 Project Overview
-This is a comprehensive course player web application designed to provide an engaging learning experience. The platform allows students to watch course videos, take quizzes, track their progress, ask questions, view leaderboards, and interact with course materials through an intuitive interface.
-✨ Key Features
-🎥 Video Player
+# 🎓 Course Player Web Application
 
-Custom-built video player with full controls
-Play/Pause, mute/unmute, seek functionality
-Fullscreen and theater mode support
-Responsive design with smooth animations
-Touch and keyboard controls
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.23-ff69b4?logo=framer)](https://www.framer.com/motion/)
 
-📚 Course Modules
+A modern, interactive course learning platform built with **Next.js 15**, featuring **video playback**, **quizzes**, **leaderboards**, and **real-time progress tracking**.
 
-Expandable/collapsible course sections
-Week-by-week content organization
-Locked and unlocked lessons
-PDF viewer for course materials
-Question counts and time estimates per lesson
+---
 
-🎯 Interactive Quizzes
+## 🚀 Live Demo
 
-Timed quizzes with countdown timer
-Multiple-choice questions
-Real-time answer tracking
-Comprehensive results with answer review
-Question navigation and progress indicators
-Retake functionality
+Check out the live application:  
+👉 [https://yousef-nasr-next-js-task-itlegend-k.vercel.app/](https://yousef-nasr-next-js-task-itlegend-k.vercel.app/)
 
-🏆 Leaderboard System
+---
 
-Real-time ranking display
-Trophy icons for top performers
-Current user position highlighting
-Motivational messages based on performance
-Percentage-based progress tracking
+## 📋 Project Overview
 
-💬 Comment System
+This is a comprehensive **course player web application** designed to provide an engaging learning experience.  
+The platform allows students to:
 
-Add and view comments
-User avatars and timestamps
-Real-time comment updates
-Smooth submission animations
+- Watch course videos
+- Take quizzes
+- Track their progress
+- Ask questions
+- View leaderboards
+- Interact with course materials through an intuitive interface
 
-❓ Question Feature
+---
 
-Ask questions during the course
-Draft auto-save functionality
-Question popup with keyboard shortcuts (Ctrl+Enter)
-Context-aware question submission
+## ✨ Key Features
 
-📊 Progress Tracking
+### 🎥 Video Player
 
-Visual progress bar with percentage
-Animated "You are here" marker
-Course completion tracking
+- Custom-built player with full controls
+- Play/Pause, mute/unmute, seek functionality
+- Fullscreen and theater mode support
+- Responsive design with smooth animations
+- Touch and keyboard controls
 
-🛠️ Technologies Used
-Frontend Framework
+### 📚 Course Modules
 
-Next.js 15.5.5 - React framework with App Router
-React 19.1.0 - UI library
-TypeScript 5.9.3 - Type-safe development
+- Expandable/collapsible sections
+- Week-by-week content organization
+- Locked/unlocked lessons
+- PDF viewer for materials
+- Question counts and time estimates
 
-Styling
+### 🎯 Interactive Quizzes
 
-Tailwind CSS 4.1.14 - Utility-first CSS framework
-Framer Motion 12.23.24 - Animation library for smooth transitions
-React Icons 5.5.0 - Icon library
+- Timed quizzes with countdown
+- Multiple-choice questions
+- Real-time answer tracking
+- Detailed results and answer review
+- Question navigation and progress indicators
+- Retake functionality
 
-UI Components & Notifications
+### 🏆 Leaderboard System
 
-Sonner 2.0.7 - Toast notifications
+- Real-time ranking display
+- Trophy icons for top performers
+- Current user position highlighting
+- Motivational messages
+- Percentage-based progress tracking
 
-Build Tools
+### 💬 Comment System
 
-Turbopack - Next.js bundler for faster development
-PostCSS - CSS processing
+- Add and view comments
+- User avatars and timestamps
+- Real-time comment updates
+- Smooth submission animations
 
-Code Quality
+### ❓ Question Feature
 
-ESLint 9.37.0 - Code linting
-TypeScript ESLint - TypeScript-specific linting rules
+- Ask questions during the course
+- Draft auto-save functionality
+- Keyboard shortcuts (Ctrl + Enter)
+- Context-aware submission
 
-📁 Project Structure
+### 📊 Progress Tracking
+
+- Visual progress bar with percentage
+- Animated “You are here” marker
+- Course completion tracking
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend Framework
+
+- **Next.js 15.5.5** – React framework with App Router
+- **React 19.1.0** – UI library
+- **TypeScript 5.9.3** – Type-safe development
+
+### Styling
+
+- **Tailwind CSS 4.1.14** – Utility-first CSS framework
+- **Framer Motion 12.23.24** – Animation library
+- **React Icons 5.5.0** – Icon library
+
+### UI Components & Notifications
+
+- **Sonner 2.0.7** – Toast notifications
+
+### Build Tools
+
+- **Turbopack** – Faster bundling for development
+- **PostCSS** – CSS processing
+
+### Code Quality
+
+- **ESLint 9.37.0** – Code linting
+- **TypeScript ESLint** – TypeScript-specific rules
+
+---
+
+## 📁 Project Structure
+
+```
 src/
 ├── app/
 │   ├── layout.tsx          # Root layout with global styles
@@ -102,105 +137,152 @@ src/
 │   ├── ui/                 # Reusable UI components
 │   └── video/              # Video player components
 └── types/                  # TypeScript type definitions
-🎨 Design Features
-Responsive Design
+```
 
-Mobile-first approach
-Tablet and desktop optimizations
-Adaptive layouts for different screen sizes
-Touch-friendly interfaces
+---
 
-Animations
+## 🎨 Design Features
 
-Smooth page transitions
-Interactive hover effects
-Loading states
-Modal animations with backdrop blur
+### Responsive Design
 
-User Experience
+- Mobile-first approach
+- Tablet and desktop optimizations
+- Adaptive layouts for various screen sizes
+- Touch-friendly controls
 
-Intuitive navigation
-Breadcrumb navigation
-Context menus and tooltips
-Keyboard shortcuts
-Accessibility considerations
+### Animations
 
-🔧 Installation & Setup
+- Smooth page transitions
+- Interactive hover effects
+- Loading states
+- Modal animations with backdrop blur
 
-Clone the repository
+### User Experience
 
-bashgit clone <repository-url>
+- Intuitive navigation
+- Breadcrumb navigation
+- Context menus and tooltips
+- Keyboard shortcuts
+- Accessibility considerations
+
+---
+
+## 🔧 Installation & Setup
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
 cd itlegend-course-player-page-test
+```
 
-Install dependencies
+### 2. Install dependencies
 
-bashpnpm install
+```bash
+pnpm install
 # or
 npm install
 # or
 yarn install
+```
 
-Run the development server
+### 3. Run the development server
 
-bashpnpm dev
+```bash
+pnpm dev
 # or
 npm run dev
 # or
 yarn dev
+```
 
-Open your browser
-Navigate to http://localhost:3000
+### 4. Open in browser
 
-🚀 Build for Production
-bashpnpm build
+Visit [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🚀 Build for Production
+
+```bash
+pnpm build
 pnpm start
-📦 Key Dependencies
+```
 
-next@15.5.5 - React framework
-react@19.1.0 & react-dom@19.1.0 - React library
-framer-motion@12.23.24 - Animation library
-tailwindcss@4.1.14 - CSS framework
-typescript@5.9.3 - Type checking
-sonner@2.0.7 - Toast notifications
-react-icons@5.5.0 - Icon library
+---
 
-🌟 Features Breakdown
-Theater Mode
+## 📦 Key Dependencies
+
+| Dependency                         | Description         |
+| ---------------------------------- | ------------------- |
+| `next@15.5.5`                      | React framework     |
+| `react@19.1.0`, `react-dom@19.1.0` | React library       |
+| `framer-motion@12.23.24`           | Animation library   |
+| `tailwindcss@4.1.14`               | CSS framework       |
+| `typescript@5.9.3`                 | Type checking       |
+| `sonner@2.0.7`                     | Toast notifications |
+| `react-icons@5.5.0`                | Icon library        |
+
+---
+
+## 🌟 Features Breakdown
+
+### 🎬 Theater Mode
+
 Toggle between normal and wide-screen video viewing modes for an immersive experience.
-Quiz System
 
-Comprehensive quiz management with Context API
-Timer with visual countdown
-Question navigation
-Instant feedback on answers
-Detailed results with correct answer review
+### 🧩 Quiz System
 
-Leaderboard
+- Managed via React Context API
+- Countdown timer with visual feedback
+- Question navigation
+- Instant feedback
+- Answer review and score summary
 
-Dynamic ranking based on course progress
-Personalized motivational messages
-Visual indicators for top performers
-Real-time position updates
+### 🏅 Leaderboard
 
-Course Materials
+- Dynamic ranking based on course progress
+- Personalized motivational messages
+- Visual indicators for top performers
+- Real-time updates
 
-PDF viewer integration
-Downloadable resources
-Structured learning paths
-Progress indicators per module
+### 📘 Course Materials
 
-🔐 Browser Support
+- PDF viewer integration
+- Downloadable resources
+- Structured learning paths
+- Progress per module
 
-Chrome (latest)
-Firefox (latest)
-Safari (latest)
-Edge (latest)
+---
 
-📱 Mobile Support
-Fully responsive design with touch-optimized controls for iOS and Android devices.
-🤝 Contributing
-This project was developed as part of a technical assessment. For any suggestions or improvements, feel free to reach out.
-📄 License
-This project is private and developed for assessment purposes.
+## 🔐 Browser Support
 
-Built with ❤️ using Next.js and modern web technologies
+| Browser | Supported |
+| ------- | --------- |
+| Chrome  | ✅ Latest |
+| Firefox | ✅ Latest |
+| Safari  | ✅ Latest |
+| Edge    | ✅ Latest |
+
+---
+
+## 📱 Mobile Support
+
+Fully responsive with touch-optimized controls for both **iOS** and **Android** devices.
+
+---
+
+## 🤝 Contributing
+
+This project was developed as part of a **technical assessment**.  
+For suggestions or improvements, feel free to reach out.
+
+---
+
+## 📄 License
+
+This project is **private** and developed for **assessment purposes only**.
+
+---
+
+**Built with ❤️ using Next.js and modern web technologies**
